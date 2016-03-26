@@ -2,7 +2,7 @@
 layout: post
 title:  "利用Github pages+jekyll搭建个人博客"
 date:   2016-03-25 17:25:55 +0800
-categories: jekyll update
+categories: jekyll
 ---
 1.[Github Pages官方指南] 建好Github仓库；
 
