@@ -2,8 +2,9 @@
 layout: post
 title:  "给LaTeX初学者一点建议"
 date:   2016-03-26 16:40:45 +0800
-categories: LaTeX
+categories: writing
 ---
+
 利用LaTeX进行写作，我认为有以下几个原则：
 
 1.保持一致。让tex文件的代码看上去跟编译过后的dvi或者PDF一样。表格示例：
