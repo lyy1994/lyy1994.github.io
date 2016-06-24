@@ -1,0 +1,46 @@
+---
+layout: post
+title:  "Popular Machine Learing Datasets"
+date:   2016-06-24 16:10:19 +0800
+categories: machine-learning
+---
+
+>Links below are some datasets that I collected from the **web** or **papers**. Feel free to play with them!
+
+## Within Programming Languages
+
+R: data()
+
+Python: [scikit-learn](http://scikit-learn.org/stable/datasets/index.html#general-dataset-api)
+
+## Datasets Repositories
+
+[Kaggle](https://www.kaggle.com/datasets)
+
+[UCI](http://archive.ics.uci.edu/ml/) : play with *Most Popular Data Sets*(Recommend)
+
+## Online Recognition
+
+[IAM On-Line Handwriting Database](http://www.fki.inf.unibe.ch/databases/iam-on-line-handwriting-database)
+
+## Image Recognition
+
+[MNIST](http://yann.lecun.com/exdb/mnist/) or [Kaggle](https://www.kaggle.com/c/digit-recognizer)
+
+[CIFAR-10](http://www.cs.toronto.edu/~kriz/cifar.html) or [Kaggle](https://www.kaggle.com/c/cifar-10/)
+
+[ImageNet](http://image-net.org/download-imageurls)
+
+## Text Generation/Classification
+
+[RCV1](http://www.ai.mit.edu/projects/jmlr/papers/volume5/lewis04a/lyrl2004_rcv1v2_README.htm) or [here](http://archive.ics.uci.edu/ml/datasets/Reuters+RCV1+RCV2+Multilingual,+Multiview+Text+Categorization+Test+collection)
+
+[20-newsgroups](https://kdd.ics.uci.edu/databases/20newsgroups/20newsgroups.html) or [here](http://qwone.com/~jason/20Newsgroups/)
+
+## Machine Translation
+
+[WMT'14](http://www.statmt.org/wmt14/translation-task.html)
+
+## Machine QA
+
+See this [paper](http://arxiv.org/pdf/1410.3916v11)'s appendix for data generation.
