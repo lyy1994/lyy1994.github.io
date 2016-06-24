@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Derivative of softmax under Cross-Entropy Error function"
+title:  "Derivative of Softmax under Cross-Entropy Error"
 date:   2016-05-11 20:29:58 +0800
 categories: machine-learning
 ---
