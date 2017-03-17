@@ -186,6 +186,8 @@ Similarly,
 
 $$P(v|h)=\prod_{i=1}^{n_v} sigmoid\big((2v-1) \cdot (b+Wh)\big)_i$$
 
+where $$\cdot$$ denotes a element-wise product operation.
+
 ## Relation to MRF
 
 RBM is actually a log-linear Markov Random Field, i.e., MRF. I won't present definition of MRF here but only a picture to describe their relationship.
