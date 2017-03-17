@@ -194,11 +194,16 @@ RBM is actually a log-linear Markov Random Field, i.e., MRF. I won't present def
 
 ![](/images/EBM+Notes_1.png)
 
+For each clique functions, they have the same form:
+
+$$\phi(s_i,s_j)=e^{-s_is_jW_{ij}}$$
+
 # Reference
 1. [Deep Learning](http://www.deeplearningbook.org/), Goodfellow et al., MIT Press.
 2. [Neural Networks for Machine Learning](https://www.coursera.org/learn/neural-networks), Hinton et al., Coursera.
 3. [Restricted Boltzmann machine](https://en.wikipedia.org/wiki/Restricted_Boltzmann_machine), Wikipedia.
 4. [Restricted Boltzmann Machines (RBM)](http://deeplearning.net/tutorial/rbm.html), DeepLearning 0.1 documentation.
+5. [Deep Learning Short Course: *4-Connection*](https://github.com/lyy1994/DLSC/tree/master/slides), Yanyang Lee, GitHub.
 
 # Appendix
 
