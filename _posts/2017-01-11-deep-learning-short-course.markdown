@@ -27,6 +27,8 @@ Because of short of time, I didn't make PPTs of 'Unsupervised Learning and Regul
 
 As for which book should be textbook, I recommand [*Deep Learning*](http://www.deeplearningbook.org/), written by I. Goodfellow, Y. Bengio and A. Courville. Its contents are mostly driven by intuition and contain only necessary mathematics. It is also a nice practical guide although its guidances are scattered through the book.
 
+[Here](https://github.com/lyy1994/DLSC/tree/master/book) is an annotated PDF version of this textbook, which contains about 1200 comments, including notes, highlights of errors and etc.
+
 Since Deep Learning is a very active research field, the larger the gap between the day you read this textbook and it published became, the more inaccurate future trend pointed out by this textbook is. As a supplement, you should read a most recent review or survey of Deep Learning.
 
 ## Appendix
