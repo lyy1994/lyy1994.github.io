@@ -87,7 +87,7 @@ The **__init__** function will load the whole data set into main memory when you
 + **one_hot**: whether labels use one-hot encoding
 + **seed**: random seed to shuffle data
 
-Noted that we will and will only shuffle all samples of data set once. Shuffling data will *improve generalization* in some sense, especially when we use stochastic gradient descent, which required randomly chosing a few data to compute gradients. But in practical it is hard to draw samples from a very large data set everytime we compute gradients(it need to maintain a large index array). Shuffling once will asymptotically satisfy this requirement(in expectation).
+Noted that we will and will only shuffle all samples of data set once. Shuffling data will *improve generalization* in some sense[1](#issue1) <span id = "issue1_back"></span>, especially when we use stochastic gradient descent, which required randomly chosing a few data to compute gradients. But in practical it is hard to draw samples from a very large data set everytime we compute gradients(it need to maintain a large index array). Shuffling once will asymptotically satisfy this requirement(in expectation).
     
 		def read(self):
 			with gzip.open(self.data_dir['Y']) as flbl:
@@ -222,15 +222,15 @@ The reason why I use learning rate and momentum as placeholders instead of const
 			pre_sigmoid_activation = tf.matmul(hidden, tf.transpose(self.w)) + self.vb
 			return tf.nn.sigmoid(pre_sigmoid_activation)
 
-The **propup** and **propdown** function compute $$P(h\|v)$$[1](#issue1) <span id = "issue1_back"></span> and $$P(v\|h)$$ respectively.
+The **propup** and **propdown** function compute $$P(h\|v)$$[2](#issue2) <span id = "issue2_back"></span> and $$P(v\|h)$$ respectively.
 
 **prop** is abbreviation of **propagation**.
 
-When computing $$P(h\|v)$$, we need to clamp $$v$$. Viewing from picture below, this computation seems need to propagate "up", so cames the **up** in function's name.
-
-The same reason also apply to origin of **down** in function's name(Image adopted from [Theano Documents][theanoRBM]).
+When computing $$P(h\|v)$$, we need to clamp $$v$$. Viewing from picture below, this computation seems need to propagate "up", so cames the **up** in function's name(Image adopted from [Theano Documents][theanoRBM]).
 
 ![](/images/RBM+TF_1.png)
+
+The same reason also apply to origin of **down** in function's name.
 
 ## 4.3 Gibbs Sampling Steps
 			
@@ -314,7 +314,7 @@ Parameter update rule without momentum:
 
 $$\theta(t) = \theta(t-1) + \epsilon \frac{\partial log\ P(v)}{\partial \theta(t-1)}$$
 
-These 2 update rules for parameter will become equivalent by setting $$\alpha$$ to 0, which is also the trick I employed in my implementation.
+These 2 update rules for parameter become equivalent when setting $$\alpha$$ to 0, which is also the trick I employed in my implementation.
 
 Postive sign inside update rule came from fact that we are doing gradient ascent.
 
@@ -546,7 +546,8 @@ The **.ipynb** file of codes in this post is available on my [GitHub][myRBM].
 
 # 9. Appendix
 
-1. <span id = "issue1">Because of some unknown mistakes in *jekyll*, we can't present P\(h|v\) but P\(h||v\) via *MathJax* sometimes.</span> [Go Back](#issue1_back)
+1. <span id = "issue1">Shuffling remove extra regularites introduced by the order of data. These regularities will appear in mini-batch setting, where sometimes some batches only consist of a small fraction of possible categories, which will produce a biased estimate of true gradient, resulting in model learnt non-existed regularities.</span> [Go Back](#issue1_back)
+2. <span id = "issue2">Because of some unknown mistakes in *jekyll*, we can't present P\(h|v\) but P\(h||v\) via *MathJax* sometimes.</span> [Go Back](#issue2_back)
 
 [MNIST]: http://yann.lecun.com/exdb/mnist/
 [theanoRBM]: http://deeplearning.net/tutorial/rbm.html#rbm
