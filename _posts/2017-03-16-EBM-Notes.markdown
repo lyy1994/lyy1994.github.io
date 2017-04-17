@@ -11,7 +11,7 @@ categories: machine-learning
 
 To read through this note, you might need some background knowledge about EBMs, RBMs and MRFs. This note is not for newbie but for those only knew some basic concepts of these models and want to know more mathematics underlying them or those had troubles in understanding mathematics of these models.
 
-# Joint Distribution
+# 1. Joint Distribution
 
 For random variables within EBMs, they can usually be divided into 2 sets. Some random variables' values can be observed, and we denoted them as $$v$$, i.e., visible. Others can not be observed, and we denoted them as $$h$$, i.e., hidden.
 
@@ -27,13 +27,13 @@ where $$Z$$ is normalization constant, $$Z=\sum_{h,v} e^{-E(h,v)}$$.
 
 Using $$e^{-E}$$ ensure the unnormalized distribution is always postive, and free the energy function to take on any real value.
 
-# Marginal Distribution
+# 2. Marginal Distribution
 
 Some times we want to know $$P(v)$$:
 
 $$P(v)=\sum_h P(h,v)=\frac{\sum_h e^{-E(h,v)}}{Z}$$
 
-# Maximun log-Likelihood
+# 3. Maximun log-Likelihood
 
 For the learning problem of EBMs, we always want to use optimization algorithms, like gradient descent, to:
 
@@ -56,7 +56,7 @@ Here we expand left side of equation using marginal distribution relationship be
 
 On the right side of equation, we always denote the first term $$-\frac{\partial log \sum_h e^{-E(h,v)}}{\partial \theta}$$ as **postive phase** and the second term $$\frac{\partial log\ Z}{\partial \theta}$$ as **negative phase**. Later I will describe these two terms in more details.
 
-## Postive Phase
+## 3.1 Postive Phase
 
 For postive phase, we keep applying *chain rule*:
 
@@ -86,7 +86,7 @@ This is the final form of postive phase.
 
 **Warning**: Noted that we abuse notation $$h$$ since it no longer represent a random variable instead a specific value of this random variable. Replacing it with other symbols will be more appropriate but less straightforward.
 
-## Negative Phase
+## 3.2 Negative Phase
 
 For negative Phase, we also keep applying *chain rule*:
 
@@ -111,7 +111,7 @@ We can also rewrite it as a form of expectation:
 
 $$-E_{h',v' \sim P(h,v)} \frac{\partial E(h',v')}{\partial \theta}$$
 
-## Learning Rule
+## 3.3 Learning Rule
 
 At last, we obtained:
 
@@ -120,15 +120,15 @@ $$
 = E_{h \sim P(h|v)} \frac{\partial E(h,v)}{\partial \theta} - E_{h',v' \sim P(h,v)} \frac{\partial E(h',v')}{\partial \theta}
 $$
 
-Noted that name of these two terms did not come from their sign, but come from the fact that for postive phase, $$h \sim P(h\|v)$$ [1](#footnote1) where $$P(h\|v)$$ is defined by $$\theta$$ and $$h$$ is free but $$v$$ is given by training set, and for negative phase, $$h',v' \sim P(h,v)$$ where $$P(h,v)$$ is defined by $$\theta$$ but $$v'$$ and $$h'$$ are free.
+Noted that name of these two terms did not come from their sign, but come from the fact that for postive phase, $$h \sim P(h\|v)$$ [1](#footnote1) <span id = "footnote1_back"></span> where $$P(h\|v)$$ is defined by $$\theta$$ and $$h$$ is free but $$v$$ is given by training set, and for negative phase, $$h',v' \sim P(h,v)$$ where $$P(h,v)$$ is defined by $$\theta$$ but $$v'$$ and $$h'$$ are free.
 
-# Details in RBMs
+# 4. Details in RBMs
 
 Restricted Boltzmann Machine, known as RBMs, is a particular variant of EBMs.
 
 RBMs shared all properties that EBMs have, but there is a few details that we should look at.
 
-## Energy Function
+## 4.1 Energy Function
 
 For RBMs, its energy function take on a specific form:
 
@@ -136,7 +136,7 @@ $$E(h,v) = -v^TWh-b^Tv-c^Th$$
 
 where $$W$$ is weight matrix, $$W_{ij}$$ means weight on connection from visible unit $$i$$ to hidden unit $$j$$.
 
-## Posterior Distribution
+## 4.2 Posterior Distribution
 
 According to EBM learning rule, we need to know $$P(h\|v)$$. In RBMs, it has a easy-to-compute form:
 
@@ -188,7 +188,7 @@ $$P(v|h)=\prod_{i=1}^{n_v} sigmoid\big((2v-1) \cdot (b+Wh)\big)_i$$
 
 where $$\cdot$$ denotes a element-wise product operation.
 
-## Relation to MRF
+## 4.3 Relation to MRF
 
 RBM is actually a log-linear Markov Random Field, i.e., MRF. I won't present definition of MRF here but only a picture to describe their relationship.
 
@@ -198,13 +198,13 @@ For each clique functions, they have the same form:
 
 $$\phi(s_i,s_j)=e^{-s_is_jW_{ij}}$$
 
-# Reference
+# 5. Reference
 1. [Deep Learning](http://www.deeplearningbook.org/), Goodfellow et al., MIT Press.
 2. [Neural Networks for Machine Learning](https://www.coursera.org/learn/neural-networks), Hinton et al., Coursera.
 3. [Restricted Boltzmann machine](https://en.wikipedia.org/wiki/Restricted_Boltzmann_machine), Wikipedia.
 4. [Restricted Boltzmann Machines (RBM)](http://deeplearning.net/tutorial/rbm.html), DeepLearning 0.1 documentation.
 5. [Deep Learning Short Course: *4-Connection*](https://github.com/lyy1994/DLSC/tree/master/slides), Yanyang Lee, GitHub.
 
-# Appendix
+# 6. Appendix
 
-<span id = "footnote1">1. Because of some unknown mistakes in *jekyll*, we can't present P\(h|v\) but P\(h||v\) via *MathJax* sometimes.</span>
+<span id = "footnote1">1. Because of some unknown mistakes in *jekyll*, we can't present P\(h|v\) but P\(h||v\) via *MathJax* sometimes.</span> [Go Back](#footnote1_back)
