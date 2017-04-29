@@ -62,7 +62,7 @@ For postive phase, we keep applying *chain rule*:
 
 $$
 -\frac{\partial log \sum_h e^{-E(v,h)}}{\partial \theta}
-= - \frac{1}{\sum_h e^{-E(h,v)}} \sum_h \frac{\partial e^{-e^{E(h,v)}}}{\partial \theta}
+= - \frac{1}{\sum_h e^{-E(h,v)}} \sum_h \frac{\partial e^{-E(h,v)}}{\partial \theta}
 = -\frac{1}{\sum_h e^{-E(h,v)}} \sum_h e^{-E(h,v)} \frac{\partial -E(h,v)}{\partial \theta}
 $$
 
@@ -196,7 +196,7 @@ RBM is actually a log-linear Markov Random Field, i.e., MRF. I won't present def
 
 For each clique functions, they have the same form:
 
-$$\phi(s_i,s_j)=e^{-s_is_jW_{ij}}$$
+$$\phi(v_i,h_j)=e^{W_{ij}v_ih_j+b_iv_i+c_jh_j}$$
 
 # 5. Reference
 1. [Deep Learning](http://www.deeplearningbook.org/), Goodfellow et al., MIT Press.
