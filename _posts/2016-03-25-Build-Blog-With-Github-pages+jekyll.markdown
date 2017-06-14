@@ -25,6 +25,25 @@ categories: jekyll
 
 *发表新博客最好从_post里面自带的post复制一份使用Notepad++修改出来，这样可以避免一些编码问题。
 
+**---------------------------------------------2017/6/15 UPDATE---------------------------------------------**
+
+在Windows7, 32位系统中，安装Jekyll只需要两步:
+
+1. 在[Ruby官网]上选择安装最新版本的Ruby，并打开命令行输入如下命令检测是否成功安装Ruby和Gym：
+
+```
+ruby -v
+gem -v
+```
+
+2. 打开命令行输入如下命令即可成功安装Jekyll：
+
+```
+gem install jekyll
+```
+
+
 [Github Pages官方指南]: https://pages.github.com/
 [两行命令部署jekyll]: https://davidburela.wordpress.com/2015/11/28/easily-install-jekyll-on-windows-with-3-command-prompt-entries-and-chocolatey/
 [Jekyll官网]: https://jekyllrb.com/docs/home/
+[Ruby官网]: https://rubyinstaller.org/downloads/
