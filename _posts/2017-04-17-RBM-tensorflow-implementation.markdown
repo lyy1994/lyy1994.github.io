@@ -518,9 +518,21 @@ Now we draw samples from our trained model to visually check its quality:
 
 Most of samples are highly recognizable digits. Some of them are inferior. This may be due to the lack of model capacity or mixing of markov chain is not well.
 
-Despite of bad samples, we can see that even in samples with highly recognizable digits, they seem to have some **background noise**. This might probably be due to the *sampling process* and inherent problem within our *objective function*.
+Despite of bad samples, we can see that even in samples with highly recognizable digits, they seem to have some **background noise**. This might probably be due to the *sampling process* and inherent problem within our *model*.
 
-We know that for the background of our digits images, say $$x$$, they should be definitely black, i.e., the probability of taking black should be 1. However, in our objective function $$log\ P(x)$$ it will never push $$P(x)$$ to 0 precisely because $$log0$$ is negative infinite, which can not be used to compute gradients. So instead it will only push $$P(x)$$ approach 0 asymptotically. This result in $$P(x)$$ is close to 0 but not 0. When we sample according to this distribution, it is highly likely that some $$x$$ will be sampled as white, even though their probabilies of black is very high.
+We know that for RBM its inputs is binary variables. However, our gray scale images are consisted of real values between $$[0,256)$$. In this case we divide them by 255 so that their values are scaled to $$[0,1]$$ and can be interpreted as probability of taking corresponding varible to 0(black) or 1(white).
+
+After finishing this preprocess procedure, we can draw samples from such distributions:
+
+![](/images/RBM+TF_9.png)
+
+We can see that such samples are very similar to what we draw from learnt RBM. This explain that why RBM's samples seem containing background noise: If RBM fits data distributions well, then it will output a similar distribution to draw samples, thus these samples will have similar visual effects(background noise).
+
+If we instead rescale RBM's output distribution and print it as a gray scale image, then we will get a better sample:
+
+![](/images/RBM+TF_10.png)
+
+For the blur part of these images, this might be results of not mixing well of Markov Chain and low model capacity. we can improve this by allowing mixing more steps and using deeper model.
 
 ### 6.2.2 Filters
 
