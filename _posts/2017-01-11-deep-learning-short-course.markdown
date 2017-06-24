@@ -1,20 +1,20 @@
 ---
 layout: post
 title:  "Deep Learning Short Course"
-date:   2017-01-11 01:15:06 +0800
+date:   2017-06-25 01:15:06 +0800
 categories: machine-learning
 ---
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
->I taught a short course of Deep Learning at 2016 Fall. So I want to share some useful materials.
+>I taught a short course of Deep Learning in 2016 Fall and presented 2 lectures of Deep Learning in 2017 Spring. So I want to share some useful materials.
 
 ## Slides
 
 Below is PPT that I used in lectures:
 
-1. [Introduction to Deep Learning](https://github.com/lyy1994/DLSC/blob/master/slides/1-Introduction.pptx)
-2. [Supervised Learning and Optimization Tricks](https://github.com/lyy1994/DLSC/blob/master/slides/2-Learning_1.pptx)
+1. [Introduction to Deep Learning](https://github.com/lyy1994/DLSC/blob/master/slides/1-Introduction.pptx)(17/1/11) / [Neural Networks Basics](https://github.com/lyy1994/DLSC/blob/master/lectures/NN%20Basics/Neural%20Networks%20Basics.pptx)(17/6/25)
+2. [Supervised Learning and Optimization Tricks](https://github.com/lyy1994/DLSC/blob/master/slides/2-Learning_1.pptx)(17/1/11) / [Neural Networks Learning](https://github.com/lyy1994/DLSC/blob/master/lectures/NN%20Learning/Neural%20Networks%20Learning.pptx)(17/6/25)
 3. [Varients of Neuron](https://github.com/lyy1994/DLSC/blob/master/slides/3-Neuron.pptx)
 4. [Varients of Connection](https://github.com/lyy1994/DLSC/blob/master/slides/4-Connection.pptx)
 5. [General View](https://github.com/lyy1994/DLSC/blob/master/slides/6-General%20View.pptx)
