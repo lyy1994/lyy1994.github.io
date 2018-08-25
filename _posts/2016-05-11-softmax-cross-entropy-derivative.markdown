@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Derivative of Softmax under Cross-Entropy Error"
+title:  "Derivative of Softmax under Cross Entropy Error"
 date:   2016-05-11 20:29:58 +0800
 categories: machine-learning
 ---
@@ -49,7 +49,7 @@ $$\frac{\partial C}{\partial z_i} = -\sum_{k=1}^K \frac{t_k}{y_k} y_k (1\{k = i\
 
 Note that the subscript \\(i\\) of \\(y_i\\) is constant and \\(1\\{k = i\\}\\) only have non-zero value if \\(k = i\\), finally we can get:
 
-$$\frac{\partial C}{\partial z_i} = -\sum_{k=1}^K t_k (1\{k = i\} - y_i) = -\sum_{k=1}^K t_k 1\{k = i\} + \sum_{k=1}^K y_i = -t_i + y_i = y_i - t_i$$
+$$\frac{\partial C}{\partial z_i} = -\sum_{k=1}^K t_k (1\{k = i\} - y_i) = -\sum_{k=1}^K t_k 1\{k = i\} + \sum_{k=1}^K t_ky_i = -t_i + y_i = y_i - t_i$$
 
 It is almost done. If you are not interested in how to get \\(\frac{\partial y_k}{\partial z_i}\\) or you don't have enough time, now you can leave this page(because the remaining part is boring).
 
